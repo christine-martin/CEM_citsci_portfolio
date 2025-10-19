@@ -69,6 +69,6 @@ species_data_totals <- species_data |>
 colnames(species_data_totals)
 
 #Data should now be ready to generate visualizations summarizing the proportions
-#of species divisions/orders, species totals, and IUCN designations to
+#of species divisions/orders, species totals, and IUCN status to
 #understand how the citizen science literature is interacting with various
 #species, orders, and divisions of chondrichthyans and their conservation status
