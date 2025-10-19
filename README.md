@@ -7,7 +7,6 @@ This is my GitHub portfolio project, which features data and visualizations from
 ## Current project repository contents:
 - data:
     - data/raw: contains this project's raw data in csv format ("citsci_specieslist_data.csv")
-    - data/processed: contains this project's processed data in csv format ("citsci_specieslist_processed.cvs")
       
 - scripts:
     - scripts/01_processing: contains an r script that imports the data, cleans the data, and creates a new column necessary for future analysis
