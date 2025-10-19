@@ -20,7 +20,7 @@ Future contents will include a results folder that will contain images, etc.
 2. scientific_name: the scientific name of the chondrichthyan species addressed in the citizen science literature [character]
 3. division: the division of the chondrichthyan species addressed in the citizen science literature (e.g., 'Ray/Skate', 'Shark') [character] 
 4. order: the order of the chondrichthyan species addressed in the citizen science literature (e.g., 'Myliobatiform', 'Carcharhiniform') [character] 
-5. not_species_level: 'TRUE' indicates that an organism(s) in the literature were unable to identify to a species level and that the value is NOT at the species level (e.g., 'Sphyrna spp.' would be marked as TRUE in this column). FALSE would indicate a species-level identification was made [logical]
+5. not_species_level: 'TRUE' indicates that an organism(s) in the literature were unable to identify to a species level and that the value is NOT at the species level (e.g., 'Sphyrna spp.' would be marked as 'TRUE' in this column). 'FALSE' would indicate a species-level identification was made [logical]
 6. cat1_total: indicates the total number of times a species was addressed in a paper that was labeled 'Category 1' (the paper's primary focus is chondrichthyan(s) and addresses a single species) [numeric]
 7. cat2_total: indicates the total number of times a species was addressed in a paper that was labeled 'Category 2' (the paper's primary focus is chondrichthyan(s) and addresses multiple species) [numeric]
 8. cat3_total: indicates the total number of times a species was addressed in a paper that was labeled 'Category 3' (the paper discusses chondrichthyan(s) and engages with associated data in a meaningful way) [numeric]
