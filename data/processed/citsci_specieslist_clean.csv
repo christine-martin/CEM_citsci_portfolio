@@ -1,0 +1,133 @@
+"","species","scientific_name","division","order","not_species_level","cat1_total","cat2_total","cat3_total","cat4_total","iucn","species_totals"
+"1","Grayspot guitarfish","Acroteriobatus leucospilus","Ray/Skate","Rhinopristiform",FALSE,0,1,0,0,"EN",1
+"2","Whitespotted eagle ray","Aetobatus narinari","Ray/Skate","Myliobatiform",FALSE,0,2,1,0,"EN",3
+"3","Spotted eagle ray","Aetobatus ocellatus","Ray/Skate","Myliobatiform",FALSE,0,2,1,0,"EN",3
+"4","Duckbill eagle ray","Aetomylaeus bovinus","Ray/Skate","Myliobatiform",FALSE,0,2,0,0,"CR",2
+"5","Ornate eagle ray","Aetomylaeus vespertilio","Ray/Skate","Myliobatiform",FALSE,1,0,0,0,"CR",1
+"6","Pelagic thresher","Alopias pelagicus","Shark","Lamniform",FALSE,0,1,0,0,"EN",1
+"7","Common thresher","Alopias vulpinus","Shark","Lamniform",FALSE,0,3,0,0,"VU",3
+"8","Narrow sawfish","Anoxypristis cuspidata","Ray/Skate","Rhinopristiform",FALSE,0,2,0,0,"CR",2
+"9","Smooth stingray","Bathytoshia brevicaudata","Ray/Skate","Myliobatiform",FALSE,0,0,1,0,"LC",1
+"10","Brown stingray","Bathytoshia lata","Ray/Skate","Myliobatiform",FALSE,0,1,0,0,"VU",1
+"11","Unknown ray sp.","Batoid sp.","Ray/Skate","noot",TRUE,0,0,1,0,"Multiple/Many",1
+"12","Silvertip shark","Carcharhinus albimarginatus","Shark","Carcharhiniform",FALSE,0,2,0,0,"VU",2
+"13","Grey reef shark","Carcharhinus amblyrhynchos","Shark","Carcharhiniform",FALSE,0,4,0,0,"EN",4
+"14","Copper shark","Carcharhinus brachyurus","Shark","Carcharhiniform",FALSE,1,0,0,0,"VU",1
+"15","Spinner shark","Carcharhinus brevipinna","Shark","Carcharhiniform",FALSE,0,3,0,0,"VU",3
+"16","Silky shark","Carcharhinus falciformis","Shark","Carcharhiniform",FALSE,0,3,0,0,"VU",3
+"17","Galápagos shark","Carcharhinus galapagensis","Shark","Carcharhiniform",FALSE,0,1,1,0,"LC",2
+"18","Finetooth shark","Carcharhinus isodon","Shark","Carcharhiniform",FALSE,0,1,0,0,"NT",1
+"19","Bull shark","Carcharhinus leucas","Shark","Carcharhiniform",FALSE,0,6,0,0,"VU",6
+"20","Blacktip shark","Carcharhinus limbatus","Shark","Carcharhiniform",FALSE,0,6,1,0,"VU",7
+"21","Oceanic whitetip shark","Carcharhinus longimanus","Shark","Carcharhiniform",FALSE,0,2,0,0,"CR",2
+"22","Blacktip reef shark","Carcharhinus melanopterus","Shark","Carcharhiniform",FALSE,0,3,0,0,"VU",3
+"23","Dusky shark","Carcharhinus obscurus","Shark","Carcharhiniform",FALSE,0,1,0,0,"EN",1
+"24","Caribbean reef shark","Carcharhinus perezi","Shark","Carcharhiniform",FALSE,0,3,0,0,"EN",3
+"25","Sandbar shark","Carcharhinus plumbeus","Shark","Carcharhiniform",FALSE,0,5,0,0,"EN",5
+"26","Spottail shark","Carcharhinus sorrah","Shark","Carcharhiniform",FALSE,0,1,0,0,"NT",1
+"27","Sand tiger shark","Carcharias taurus","Shark","Lamniform",FALSE,2,1,1,0,"CR",4
+"28","White shark","Carcharodon carcharias","Shark","Lamniform",FALSE,0,2,1,0,"VU",3
+"29","Gulper shark","Centrophorus granulosus","Shark","Squaliform",FALSE,0,1,0,0,"EN",1
+"30","Smallfin gulper shark","Centrophorus moluccensis","Shark","Squaliform",FALSE,0,1,0,0,"VU",1
+"31","Basking shark","Cetorhinus maximus","Shark","Lamniform",FALSE,1,2,0,0,"EN",3
+"32","Grey Carpetshark","Chiloscyllium punctatum","Shark","Orectolobiform",FALSE,0,0,1,0,"NT",1
+"33","Kitefin shark","Dalatias licha","Shark","Squaliform",FALSE,0,1,1,0,"VU",2
+"34","Whiptail stingray spp.","Dasyatididae spp.","Ray/Skate","Myliobatiform",TRUE,0,0,0,1,"Multiple/Many",1
+"35","Common stingray","Dasyatis pastinaca","Ray/Skate","Myliobatiform",FALSE,0,2,0,0,"VU",2
+"36","Flapper skate","Dipturus intermedius","Ray/Skate","Rajiform",FALSE,3,0,0,1,"CR",4
+"37","Longnosed skate","Dipturus oxyrinchus","Ray/Skate","Rajiform",FALSE,0,2,0,0,"VU",2
+"38","Velvet belly lanternshark","Etmopterus spinax","Shark","Squaliform",FALSE,0,1,0,0,"VU",1
+"39","Tiger shark","Galeocerdo cuvier","Shark","Carcharhiniform",FALSE,0,7,0,0,"NT",7
+"40","Tope shark","Galeorhinus galeus","Shark","Carcharhiniform",FALSE,0,1,0,0,"CR",1
+"41","Blackmouth catshark","Galeus melastomus","Shark","Carcharhiniform",FALSE,0,1,0,0,"LC",1
+"42","Nurse shark","Ginglymostoma cirratum","Shark","Orectolobiform",FALSE,0,3,1,0,"VU",4
+"43","Blackchin guitarfish","Glaucostegus cemiculus","Ray/Skate","Rhinopristiform",FALSE,0,1,0,0,"CR",1
+"44","Giant guitarfish","Glaucostegus typus","Ray/Skate","Rhinopristiform",FALSE,0,1,0,0,"CR",1
+"45","Spiny butterfly ray","Gymnura altavela","Ray/Skate","Myliobatiform",FALSE,0,1,0,0,"EN",1
+"46","Snaggletooth shark","Hemipristis elongata","Shark","Carcharhiniform",FALSE,0,1,0,0,"EN",1
+"47","Sharpnose sevengill shark","Heptranchias perlo","Shark","Hexanchiform",FALSE,0,1,0,0,"NT",1
+"48","Horn shark","Heterodontus francisci","Shark","Heterodontiform",FALSE,1,0,0,0,"LC",1
+"49","Galápagos bullhead shark","Heterodontus quoyi","Shark","Heterodontiform",FALSE,0,0,1,0,"LC",1
+"50","Bluntnose sixgill shark","Hexanchus griseus","Shark","Hexanchiform",FALSE,0,3,0,0,"NT",3
+"51","Bigeyed sixgill shark","Hexanchus nakamurai","Shark","Hexanchiform",FALSE,0,1,0,0,"NT",1
+"52","Southern stingray","Hypanus americanus","Ray/Skate","Myliobatiform",FALSE,0,1,1,0,"NT",2
+"53","Longnose stingray","Hypanus guttatus","Ray/Skate","Myliobatiform",FALSE,0,1,0,0,"NT",1
+"54","Large-eye stingray","Hypanus marianae","Ray/Skate","Myliobatiform",FALSE,0,0,1,0,"EN",1
+"55","Shortfin mako","Isurus oxyrinchus","Shark","Lamniform",FALSE,0,7,0,0,"EN",7
+"56","Porbeagle shark","Lamna nasus","Shark","Lamniform",FALSE,0,2,0,0,"VU",2
+"57","Sliteye shark","Loxodon macrorhinus","Shark","Carcharhiniform",FALSE,0,1,0,0,"NT",1
+"58","Reef manta ray","Mobula alfredi","Ray/Skate","Myliobatiform",FALSE,3,2,1,0,"VU",6
+"59","Oceanic manta ray","Mobula birostris","Ray/Skate","Myliobatiform",FALSE,2,4,0,0,"EN",6
+"60","Atlantic pygmy devil ray","Mobula hypostoma","Ray/Skate","Myliobatiform",FALSE,0,1,0,0,"EN",1
+"61","Spinetail devil ray","Mobula mobular","Ray/Skate","Myliobatiform",FALSE,0,3,1,0,"CR",4
+"62","Mobula spp.","Mobula spp.","Ray/Skate","Myliobatiform",TRUE,0,1,0,0,"Multiple/Many",1
+"63","Sicklefin devil ray","Mobula tarapacana","Ray/Skate","Myliobatiform",FALSE,0,1,0,0,"CR",1
+"64","Starry smoothhound","Mustelus asterias","Shark","Carcharhiniform",FALSE,0,1,0,0,"NT",1
+"65","Common smoothhound","Mustelus mustelus","Shark","Carcharhiniform",FALSE,0,2,0,0,"EN",2
+"66","Blackspotted smoothhound","Mustelus punctulatus","Shark","Carcharhiniform",FALSE,0,2,0,0,"VU",2
+"67","Smoothhound sp.","Mustelus spp.","Shark","Carcharhiniform",TRUE,0,2,0,0,"Multiple/Many",2
+"68","Common eagle ray","Myliobatis aquila","Ray/Skate","Myliobatiform",FALSE,0,2,0,0,"CR",2
+"69","Southern eagle ray","Myliobatis australis","Ray/Skate","Myliobatiform",FALSE,0,0,1,0,"LC",1
+"70","Deep-water species not yet identified","n/a","noot","noot",TRUE,0,1,0,0,"Multiple/Many",1
+"71","Lesser numbfish","Narcine brasiliensis","Ray/Skate","Torpediniform",FALSE,0,1,0,0,"NT",1
+"72","Tawny nurse shark","Nebrius ferrugineus","Shark","Orectolobiform",FALSE,0,3,0,0,"VU",3
+"73","Sharptooth lemon shark","Negaprion acutidens","Shark","Carcharhiniform",FALSE,0,3,0,0,"EN",3
+"74","Lemon shark","Negaprion brevirostris","Shark","Carcharhiniform",FALSE,0,2,0,0,"VU",2
+"75","Maskray sp.","Neotrygon sp.","Ray/Skate","Myliobatiform",TRUE,0,0,1,0,"Multiple/Many",1
+"76","Smalltooth sand tiger shark","Odontaspis ferox","Shark","Lamniform",FALSE,0,3,0,0,"EN",3
+"77","Bigeye sand tiger shark","Odontaspis noronhai","Shark","Lamniform",FALSE,0,1,0,0,"LC",1
+"78","Wobbegong spp.","Orectolobidae spp.","Shark","Orectolobiform",TRUE,0,0,0,1,"Multiple/Many",1
+"79","Spotted wobbegong","Orectolobus maculatus","Ray/Skate","Orectolobiform",FALSE,0,0,1,0,"LC",1
+"80","Angular roughshark","Oxynotus centrina","Shark","Squaliform",FALSE,0,3,0,0,"EN",3
+"81","Pink whipray","Pateobatis fai","Ray/Skate","Myliobatiform",FALSE,0,1,0,0,"VU",1
+"82","Blue shark","Prionace glauca","Shark","Carcharhiniform",FALSE,1,3,0,0,"NT",4
+"83","Sawshark sp.","Pristiophoridae sp.","Shark","Pristophoriform",TRUE,0,1,0,0,"Multiple/Many",1
+"84","African dwarf sawshark","Pristiophorus nancyae","Shark","Pristophoriform",FALSE,0,1,0,0,"LC",1
+"85","Dwarf sawfish","Pristis clavata","Ray/Skate","Rhinopristiform",FALSE,0,2,0,0,"CR",2
+"86","Smalltooth sawfish","Pristis pectinata","Ray/Skate","Rhinopristiform",FALSE,0,1,0,0,"CR",1
+"87","Largetooth sawfish","Pristis pristis","Ray/Skate","Rhinopristiform",FALSE,0,2,0,0,"CR",2
+"88","Green sawfish","Pristis zijsron","Ray/Skate","Rhinopristiform",FALSE,0,2,0,0,"CR",2
+"89","Freckled guitarfish","Pseudobatos lentiginosus","Ray/Skate","Rhinopristiform",FALSE,0,1,0,0,"VU",1
+"90","Shorttail nurse shark","Pseudoginglymostoma brevicaudatum","Shark","Orectolobiform",FALSE,0,1,0,0,"CR",1
+"91","Pelagic stingray","Pteroplatytrygon violacea","Ray/Skate","Myliobatiform",FALSE,0,3,0,0,"LC",3
+"92","Starry skate","Raja asterias","Ray/Skate","Rajiform",FALSE,0,2,0,0,"LC",2
+"93","Thornback skate","Raja clavata","Ray/Skate","Rajiform",FALSE,0,3,0,0,"NT",3
+"94","Brown skate","Raja miraletus","Ray/Skate","Rajiform",FALSE,0,2,0,0,"LC",2
+"95","Speckled skate","Raja polystigma","Ray/Skate","Rajiform",FALSE,0,1,0,0,"LC",1
+"96","Rough skate","Raja radula","Ray/Skate","Rajiform",FALSE,0,1,0,0,"EN",1
+"97","Skate spp.","Raja spp.","Ray/Skate","Rajiform",TRUE,0,1,0,0,"Multiple/Many",1
+"98","Bowmouth guitarfish","Rhina ancylostoma","Ray/Skate","Rhinopristiform",FALSE,0,1,0,0,"CR",1
+"99","Whale shark","Rhincodon typus","Shark","Orectolobiform",FALSE,6,2,1,0,"EN",9
+"100","Common guitarfish","Rhinobatos rhinobatos","Ray/Skate","Rhinopristiform",FALSE,0,1,0,0,"CR",1
+"101","Guitarfish spp.","Rhinobatos spp.","Ray/Skate","Rhinopristiform",TRUE,0,2,0,0,"Multiple/Many",2
+"102","Australian cownose ray","Rhinoptera neglecta","Ray/Skate","Myliobatiform",FALSE,0,0,1,0,"DD",1
+"103","Cownose sp.","Rhinoptera sp.","Ray/Skate","Myliobatiform",TRUE,0,1,0,0,"Multiple/Many",1
+"104","Sharpnose sp.","Rhizoprionodon sp.","Shark","Carcharhiniform",TRUE,0,1,0,0,"Multiple/Many",1
+"105","Sharpnose spp. (Atlantic sharpnose or Caribbean sharpnose)","Rhizoprionodon spp. (R. terraenovae or R. porosus)","Shark","Carcharhiniform",TRUE,0,1,0,0,"Multiple/Many",1
+"106","Bottlenose wedgefish","Rhynchobatus australiae","Ray/Skate","Rhinopristiform",FALSE,0,2,0,0,"CR",2
+"107","Giant guitarfish","Rhynchobatus djiddensis","Ray/Skate","Rhinopristiform",FALSE,0,1,0,0,"CR",1
+"108","Eyebrow wedgefish","Rhynchobatus palpebratus","Ray/Skate","Rhinopristiform",FALSE,0,1,0,0,"NT",1
+"109","Wedgefish spp.","Rhynchobatus spp.","Ray/Skate","Rhinopristiform",TRUE,0,2,0,0,"Multiple/Many",2
+"110","White skate","Rostroraja alba","Ray/Skate","Rajiform",FALSE,0,2,0,0,"EN",2
+"111","Smallspotted catshark","Scyliorhinus canicula","Shark","Carcharhiniform",FALSE,0,2,0,0,"LC",2
+"112","Nursehound","Scyliorhinus stellaris","Shark","Carcharhiniform",FALSE,0,1,0,0,"VU",1
+"113","Catshark spp.","Scyliorhunis spp.","Shark","Carcharhiniform",TRUE,0,1,0,0,"Multiple/Many",1
+"114","Unknown shark spp.","Selachian spp.","Shark","noot",TRUE,0,0,1,0,"Multiple/Many",1
+"115","Scalloped hammerhead shark","Sphyrna lewini","Shark","Carcharhiniform",FALSE,0,7,2,0,"CR",9
+"116","Great hammerhead shark","Sphyrna mokarran","Shark","Carcharhiniform",FALSE,0,5,0,0,"CR",5
+"117","Hammerhead shark spp.","Sphyrna spp.","Shark","Carcharhiniform",TRUE,0,5,0,0,"Multiple/Many",5
+"118","Bonnethead shark","Sphyrna tiburo","Shark","Carcharhiniform",FALSE,0,2,0,0,"EN",2
+"119","Smooth hammerhead shark","Sphyrna zygaena","Shark","Carcharhiniform",FALSE,0,1,0,0,"VU",1
+"120","Spiny dogfish","Squalus acanthias","Shark","Squaliform",FALSE,0,1,0,0,"VU",1
+"121","Longnose spurdog","Squalus blainville","Shark","Squaliform",FALSE,0,3,0,0,"DD",3
+"122","Spurdog sp.","Squalus sp.","Shark","Squaliform",TRUE,0,1,0,0,"Multiple/Many",1
+"123","African angelshark","Squatina africana","Shark","Squatiniform",FALSE,0,1,0,0,"NT",1
+"124","Angelshark","Squatina squatina","Shark","Squatiniform",FALSE,0,3,0,0,"CR",3
+"125","Zebra shark","Stegostoma tigrinum","Shark","Orectolobiform",FALSE,0,4,0,0,"EN",4
+"126","Atlantic chupare","Styracura schmardae","Ray/Skate","Myliobatiform",FALSE,0,1,0,0,"EN",1
+"127","Blotched fantail ray","Taeniurops meyeni","Ray/Skate","Myliobatiform",FALSE,0,2,1,0,"VU",3
+"128","Marbled torpedo ray","Torpedo marmorata","Ray/Skate","Torpediniform",FALSE,0,2,0,0,"VU",2
+"129","Ocellate torpedo","Torpedo torpedo","Ray/Skate","Torpediniform",FALSE,0,2,0,0,"VU",2
+"130","Whitetip reef shark","Triaenodon obesus","Shark","Carcharhiniform",FALSE,0,5,0,0,"VU",5
+"131","Unidentified sawfish spp.","Unidentified pristid spp.","Ray/Skate","Rhinopristiform",TRUE,0,1,0,0,"Multiple/Many",1
+"132","Yellow stingray","Urobatis jamaicensis","Ray/Skate","Myliobatiform",FALSE,0,1,0,0,"LC",1

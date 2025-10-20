@@ -68,6 +68,9 @@ species_data_totals <- species_data |>
 #Review column names
 colnames(species_data_totals)
 
+#Save cleaned data as csv to correct folder
+write.csv(species_data_totals, "data/processed/citsci_specieslist_clean.csv")
+
 #Data should now be ready to generate visualizations summarizing the proportions
 #of species divisions/orders, species totals, and IUCN status to
 #understand how the citizen science literature is interacting with various
