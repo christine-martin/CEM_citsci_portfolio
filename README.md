@@ -11,8 +11,10 @@ This is my GitHub portfolio project, which features data and visualizations from
       
 - scripts:
     - scripts/01_processing: contains an r script that imports the data, cleans the data, and creates a new column necessary for future analysis
+    - scripts/03_content: contains an r script that produces visualizations
  
-Future contents will include a results folder that will contain images, etc.
+- results:
+    - results/img: contains visualizations/images produced
 
 ## Column names, descriptions, and data type:
 'species_data_totals' is the cleaned and renamed data, with 132 observations of 11 variables. Its column names, variable types, and variable descriptions are as follows -
