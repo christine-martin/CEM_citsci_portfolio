@@ -62,6 +62,7 @@ rsconnect/
 
 #Install packages
 install.packages("rnaturalearth")
+install.packages("rnaturalearthdata")
 install.packages("sf")
 install.packages("mapview")
 install.packages("stringr")
@@ -72,6 +73,7 @@ library(tidyverse)
 library(janitor)
 library(sf)
 library(rnaturalearth)
+library(rnaturalearthdata)
 library(mapview)
 library(stringr)
 library(ggplot2)
@@ -86,6 +88,8 @@ meow <- read_sf("data/raw/Marine Ecoregions of the World/data/commondata/data0/m
 #Quantifies the realm(s) that a chondrichthyan cit sci study occurs/addresses/draws data from
 citsci_realm_data <- read.csv("data/raw/CitSci_MEOW_test_data.csv")
 
+#Create an object that will allow me to create a world base map
+world <- ne_countries(scale = "medium", returnclass = "sf")
 #------
 #View meow map
 mapview(meow)
@@ -155,7 +159,7 @@ colnames(meow_citsci_fix)
 
 #Build a map
 p <- ggplot() +
-  geom_sf(data = world, fill = "grey80", color = "white") +
+  geom_sf(data = world, fill = "grey90", color = "grey40", size = 0.2) +
   geom_sf(data = meow_citsci_fix,
           mapping = aes(fill = n)) +
   scale_fill_viridis_c() +
@@ -176,3 +180,4 @@ ggsave(plot = p,
 
 #Export the data as a new csv
 write.csv(meow_citsci_fix, "data/processed/meow_citsci_fix.csv")
+
