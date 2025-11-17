@@ -67,6 +67,7 @@ install.packages("sf")
 install.packages("mapview")
 install.packages("stringr")
 install.packages("ggplot2")
+install.packages("ggspatial")
 
 #Library
 library(tidyverse)
@@ -77,6 +78,8 @@ library(rnaturalearthdata)
 library(mapview)
 library(stringr)
 library(ggplot2)
+library(ggspatial)
+
 #--------
 #Load Data
 
