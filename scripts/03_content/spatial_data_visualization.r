@@ -3,14 +3,6 @@
 #Citizen Science x Chondrichthyans
 #Species Data Visualization - MEOW Realm x Cit Sci Effort
 
-#Install packages
-install.packages("rnaturalearth")
-install.packages("rnaturalearthdata")
-install.packages("sf")
-install.packages("mapview")
-install.packages("stringr")
-install.packages("ggplot2")
-install.packages("ggspatial")
 
 #Library
 library(tidyverse)
