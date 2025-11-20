@@ -47,3 +47,140 @@ po/*~
 
 # RStudio Connect folder
 rsconnect/
+
+
+
+#-------------------------
+#Code for Assignment 4 - Spatial Data.
+#(@JC - Just a heads up, I had a lot of trouble with running the code and waiting a very long time for plots to appear, even
+#when the little stop sign went away)
+
+#EVR628 Project
+#Christine Martin
+#Citizen Science x Chondrichthyans
+#Species Data Visualization - MEOW Realm x Cit Sci Effort
+
+#Install packages
+install.packages("rnaturalearth")
+install.packages("rnaturalearthdata")
+install.packages("sf")
+install.packages("mapview")
+install.packages("stringr")
+install.packages("ggplot2")
+install.packages("ggspatial")
+
+#Library
+library(tidyverse)
+library(janitor)
+library(sf)
+library(rnaturalearth)
+library(rnaturalearthdata)
+library(mapview)
+library(stringr)
+library(ggplot2)
+library(ggspatial)
+
+#--------
+#Load Data
+
+#Import Marine Ecoregions of the World (MEOW) shapefile (Spalding 2007)
+#This project will use the MEOW Realms for data analysis/visualization
+meow <- read_sf("data/raw/Marine Ecoregions of the World/data/commondata/data0/meow_ecos_expl_clipped_expl.shp")
+
+#Import cit sci lit review data
+#Quantifies the realm(s) that a chondrichthyan cit sci study occurs/addresses/draws data from
+citsci_realm_data <- read.csv("data/raw/CitSci_MEOW_test_data.csv")
+
+#Create an object that will allow me to create a world base map
+world <- ne_countries(scale = "medium", returnclass = "sf")
+#------
+#View meow map
+mapview(meow)
+
+#Clean meow map names
+meow_map_clean <- meow |>
+  clean_names()
+
+#Join polygons so that they are grouped by realm
+#First switch off the spherical geometry
+sf_use_s2(FALSE)
+
+meow_map_grouped <- meow_map_clean |>
+  group_by(realm) |>
+  summarize()
+
+#Check map
+mapview(meow_map_grouped)
+
+
+#--------
+#Clean and tidy cit sci data
+
+#Review column names
+colnames(citsci_realm_data)
+
+#Clean column names
+citsci_realm_data <- citsci_realm_data |>
+  clean_names()
+
+#Review column names
+colnames(citsci_realm_data)
+
+#Creating one row per realm in the cit sci data
+#Remove spaces before new meow_realm values
+citsci_realm_clean <- citsci_realm_data |>
+  separate_longer_delim(cols = meow_realm, delim = ",") |>
+  mutate(meow_realm = str_squish(meow_realm))
+
+#Group by realm to get number of cit sci occurrences per realm
+#I WOULD LIKE TO ADJUST THIS IN THE FUTURE TO RETAIN ALL THE OTHER COLUMNS
+#FOR NOW I AM JUST ABLE TO GET N AND CANNOT LINK CITATIONS, ETC
+citsci_realm_count <- citsci_realm_clean |>
+  count(meow_realm)
+
+
+#------------
+#Join the data by linking meow_map_grouped::citsci_realm_count using realms
+meow_citsci_joined <- left_join(x = meow_map_grouped,
+          y = citsci_realm_count,
+          by = join_by(realm == meow_realm))
+
+#Replace NAs with 0
+meow_citsci_joined <- meow_citsci_joined |>
+  mutate(across(where(is.numeric), ~replace_na(., 0)))
+
+#Ensure that meow_citsci_joined is an sf object since I am having ggplot issues
+class(meow_citsci_joined)
+meow_citsci_joined <- st_as_sf(meow_citsci_joined)
+meow_citsci_joined <- st_make_valid(meow_citsci_joined)
+st_crs(meow_citsci_joined) #Check CRS = 4326
+#It appears that one of my geometries is appearing as a polygon while the rest are
+#multipolygon. Address with:
+meow_citsci_fix <- st_cast(meow_citsci_joined, "MULTIPOLYGON")
+
+colnames(meow_citsci_fix)
+
+#Build a map
+p <- ggplot() +
+  geom_sf(data = world, fill = "grey90", color = "grey40", size = 0.2) +
+  geom_sf(data = meow_citsci_fix,
+          mapping = aes(fill = n)) +
+  scale_fill_viridis_c() +
+  theme_bw() +
+  annotation_north_arrow(location = "tl") +
+  annotation_scale(location = "bl") +
+  labs(title = "Number of chondrichthyan citizen science studies occuring in each MEOW realm",
+       caption = "Source: MEOW Realms - Spalding 2007; Cit sci data - 2025 systematic literature review",
+       x = "Longitude",
+       y = "Latitude")
+
+print(p)
+
+#Save the MEOW Realm x N Cit Sci Studies plot
+ggsave(plot = p,
+       filename = "results/img/p_meow_ncitsci.png",
+       bg = "white")
+
+#Export the data as a new csv
+write.csv(meow_citsci_fix, "data/processed/meow_citsci_fix.csv")
+
