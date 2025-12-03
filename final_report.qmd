@@ -1,0 +1,120 @@
+---
+title: "How the field of chondrichthyan science utilizes citizen science in research"
+subtitle: "Visualizations from a systematic literature review and meta-analysis"
+author: "Christine Martin"
+institute: "Rosenstiel School of Marine, Atmospheric, and Earth Science; EVR"
+format: pdf
+---
+
+## Introduction
+ Citizen science is an increasingly popular avenue for researchers to maximize data collection and facilitate public engagement with research processes (McKinley et al., 2017). Although utilized earlier, the use of citizen science in the literature as a research tool greatly began to increase in popularity in the 2000s and into the mid-2010s (Kullenberg & Kasperowski, 2016). As of yet, there have been no large-scale analyses of how citizen science is being used as a tool to aid in chondrichthyan research and conservation efforts. Based on preliminary systematic literature review data, the use of citizen science-driven data appears to be a relatively recently-emerging trend in this taxonomic field. Chondrichthyans - or sharks, rays, skates, and chimaeras - are generally facing high extinction risks (Jabado et al., 2024). Therefore, it is necessary to characterize how citizen science is currently being used by the chondrichthyan research community; uncover what trends, gaps, and pitfalls may exist in its use as related to sharks, rays, skates, and chimaeras; and anticipate how citizen science can be best used as a method to advance their conservation. 
+
+## Objectives
+This study was designed to identify how the current published chondrichthyan literature utilizes citizen science as a tool to advance research. Through a systematic literature review/meta-analysis and data processing/analysis in R Studio, I plan to: 1) quantify which chondrichthyans are primarily featured in this literature across taxonomic levels (in these visualizations, I will focus on division and order), 2) identify the degree to which citizen science-driven research addresses chondrichthyans of varying conservation concern using species' IUCN Red List Status designations, 3) assess where studies are employing citizen science to advance chondrichthyan research around the world using Spalding et al.'s Marine Ecoregions of the World (MEOW) Realm designations (2007).
+
+## Data Sources
+**Citizen Science x Chondrichthyan Literature Review Data**:
+This project features a subset of data from a systematic literature review conducted on Web of Science on August 12th, 2025. Relevant papers identified via selected search terms (related to sharks, rays, chimaeras, citizen science, participatory science, etc.) were retained and coded for a variety of data points. Those relevant to this project's visualizations include: 1) Division and order of chondrichthyan(s) addressed by the paper, including total count (n) [all are numeric variables], and 2) IUCN Red List Status of chondrichthyan(s) addressed by the paper [categorical variable].
+
+**MEOW Realm Data**:
+For each study, the Marine Ecoregions of the World (MEOW) Realm(s) in which the studies took place were also identified and recorded [categorical variable]. A publicly available shapefile containing polygon data was also used as a data source to allow for map visualization when combined with the systematic literature review data [sf object; geometry = multipolygon].
+
+## Data Processing
+**Taxonomic Assessment & IUCN Red List Status Assessment **: 
+	First, the dataset was cleaned and tidied. NAs were replaced with zeros where required using the mutate function. Select, mutate, and clean_names were used to clean columns as necessary. Because categories based on the study’s level of interaction with chondrichthyan species data were identified for a separate analysis, species totals (and therefore division and order totals) had to be ascertained in R using mutate and group_by functions. 
+	Next, ggplot (with bar graph geometry) was used to visualize the division count of rays/skates versus sharks addressed by the citizen science literature, as well as visualize the count of orders of chondrichthyans addressed by the literature. 
+	Next, ggplot (with bar graph geometry) was used to visualize the proportion of orders of chondrichthyans addressed by citizen science grouped by division, as well as the proportion of IUCN status of chondrichthyans addressed by the literature grouped by division. These plots were combined into a single image using the cowplot plot_grid function. 
+
+**MEOW Realm Assessment**: 
+  First, the MEOW spatial shapefile dataset was imported and cleaned. Next, because the MEOW polygons were separated into regions of further specificity beyond Realm level, I had to join the polygons by Realm using group_by and summarize. 
+  I then needed to clean and tidy the citizen science data with the goal of identifying the total number of studies per Realm in order to later join the citizen science data to the spatial MEOW polygon data. To do this, I used separate_longer_delim, mutate, and count to create one row per Realm with a total n studies. 
+	Next, a left_join was performed to link the citizen science data to the spatial data. After further adjustments to ensure objects and geometries were being read correctly, I used ggplot (with geom_sf) to map the data and fill each Realm polygon based on the total (n) of studies per Realm. 
+
+## Main Findings
+Through data processing and visualization of data extracted from my systematic literature review on how chondrichthyan research is utilizing citizen science, I found that:
+
+```{r}
+#| echo: false
+#| results: hide
+#| warning: false
+#| message: false
+#Load packages
+library(EVR628tools)
+library(tidyverse)
+library(janitor)
+library(cowplot)
+
+#Load cleaned citizen science x chondrichthyan species data
+species_data_totals <- read.csv("data/processed/citsci_specieslist_clean.csv")
+
+#Review data info, column names
+colnames(species_data_totals)
+dim(species_data_totals)
+
+#Remove column "X" which is just numbering the rows. Truthfully, I am unsure of
+#where this came from in my processing. It will be unnecessary for analysis.
+species_data_totals <- species_data_totals |>
+  select(species,
+         scientific_name,
+         division,
+         order,
+         not_species_level,
+         cat1_total,
+         cat2_total,
+         cat3_total,
+         cat4_total,
+         iucn,
+         species_totals) |>
+  mutate(X = NULL)
+
+#Replace the "noot" values in the Division column with "NA". This was used as an
+#NA placeholder in my datasheet to avoid confusion, and now must be corrected
+species_data_totals <- species_data_totals |>
+  mutate(division = na_if(division, "noot"))
+
+#Replace the "noot" values in the Order column with "NA"
+species_data_totals <- species_data_totals |>
+  mutate(order = na_if(order, "noot"))
+
+#Find the most common species addressed in the literature
+species_data_totals$scientific_name[which(species_data_totals$species_totals == max(species_data_totals$species_totals))]
+
+```
+
+**Taxonomic Assessment**:
+Shark species were featured more heavily in the citizen science literature than rays, although not by a large margin. Over 70 citizen science studies featured one or more shark species as a topic of research, while nearly 60 studies addressed one or more species of ray or skate.
+
+The top three orders of chondrichthyan addressed were 1) carcharhiniformes (ground sharks), 2) myliobatiformes (stingrays), and 3) rhinopristiformes (shovelnose rays). 
+
+Over 50% of the sharks addressed were carcharhiniformes. Just under 50% of the rays/skates addressed were myliobatiformes. 
+
+The following species were the most addressed by the literature, with n=9 each: *`r species_data_totals$scientific_name[which(species_data_totals$species_totals == max(species_data_totals$species_totals))]`* (The whale shark and the scalloped hammerhead shark).
+
+![Division](results/img/p_division_count.png)
+
+![Order](results/img/p_order_count.png)
+
+
+
+**IUCN Assessment**:
+The largest proportion of sharks were listed by the IUCN Red List as Vulnerable, while the largest proportion of rays/skates were listed as Critically Endangered. 
+
+![Proportions by Division](results/img/p_order_iucn_grid.png)
+
+
+
+**MEOW Realm Assessment**: 
+The highest number of chondrichthyan x citizen science studies utilized data from the Central Indo-Pacific Realm, with minimal studies occurring in Realms that are located in the mid and eastern Pacific.
+
+![MEOW Realms](results/img/p_meow_ncitsci.png)
+
+
+## References
+
+- IUCN. 2025. The IUCN Red List of Threatened Species. Version 2025-2. https://www.iucnredlist.org. 
+- Jabado, R. W., Morata, A. Z. A., Bennett, R. H., Finucci, B., Ellis, J. R., Fowler, S. L., Grant, M. I., Barbosa Martins, A. P., & Sinclair, S. L. (2024). The global status of sharks, rays, and chimaeras (R. Jabado, A. Morata, R. Bennett, B. Finucci, J. Ellis, S. Fowler, & M. Grant, Eds.). https://doi.org/10.59216/ssg.gsrsrc.2024
+- Kullenberg, C., & Kasperowski, D. (2016). What is citizen science? - A scientometric meta-analysis. PLoS ONE, 11(1), 1–16. https://doi.org/10.1371/journal.pone.0147152
+- McKinley, D. C., Miller-Rushing, A. J., Ballard, H. L., Bonney, R., Brown, H., Cook-Patton, S. C., Evans, D. M., French, R. A., Parrish, J. K., Phillips, T. B., Ryan, S. F., Shanley, L. A., Shirk, J. L., Stepenuck, K. F., Weltzin, J. F., Wiggins, A., Boyle, O. D., Briggs, R. D., Chapin, S. F., … Soukup, M. A. (2017). Citizen science can improve conservation science, natural resource management, and environmental protection. Biological Conservation, 208, 15–28. https://doi.org/10.1016/j.biocon.2016.05.015
+- Posit team (2025). RStudio: Integrated Development Environment for R. Posit Software, PBC, Boston, MA. URL http://www.posit.co/.
+- Spalding, M. D., Fox, H. E., Allen, G. R., Davidson, N., Ferdaña, Z. A., Finlayson, M. A. X., ... & Robertson, J. (2007). Marine ecoregions of the world: a bioregionalization of coastal and shelf areas. BioScience, 57(7), 573-583. https://doi.org/10.1641/B570707 
+

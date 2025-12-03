@@ -162,9 +162,13 @@ ggsave(plot = p_div_iucn_prop,
 plot_grid(p_ord_div_prop, p_div_iucn_prop, ncol = 1)
 
 #Assign the cowplot grid a name
-p_order_iucn_grid <- plot_grid(p_ord_div_prop,p_div_iucn_prop, ncol = 1)
+p_order_iucn_grid <- plot_grid(p_ord_div_prop,
+                               p_div_iucn_prop,
+                               ncol = 1)
 
 #Save the grid
 ggsave(plot = p_order_iucn_grid,
        filename = "results/img/p_order_iucn_grid.png",
-       bg = "white")
+       bg = "white",
+       height = 9,
+       width = 11)
