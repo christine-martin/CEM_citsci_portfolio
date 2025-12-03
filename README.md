@@ -2,7 +2,10 @@
 Christine Martin
 EVR 628
 
-This is my GitHub portfolio project, which features data and visualizations from my SLR/meta-analysis of citizen science x chondrichthyans. I will be extracting data as a csv from my Google Sheets database on chondricthyan species discussed in the literature, their taxonomy, and their IUCN status. I am interested in understanding how citizen science is being used to answer questions about chondrichthyans across divisions, orders, species, and IUCN designations.
+This is my GitHub portfolio project, which features data and visualizations from my SLR/meta-analysis of citizen science x chondrichthyans. I have extracted data as a csv from my Google Sheets database on chondrichthyan species discussed in the literature, their taxonomy, and their IUCN status. I am interested in understanding how citizen science is being used to answer questions about chondrichthyans across divisions, orders, species, and IUCN designations.
+
+You can find my final project and visualizations here: https://github.com/christine-martin/CEM_citsci_portfolio/blob/7e3edb284d2a63ce68b9147397dfb726c5c1a3f2/final_report.pdf   
+
 
 ## Current project repository contents:
 - data:
@@ -15,6 +18,8 @@ This is my GitHub portfolio project, which features data and visualizations from
  
 - results:
     - results/img: contains visualizations/images produced
+ 
+- final report: final report as a .pdf and .qmd
 
 ## Column names, descriptions, and data type:
 'species_data_totals' is the cleaned and renamed data, with 132 observations of 11 variables. Its column names, variable types, and variable descriptions are as follows -
